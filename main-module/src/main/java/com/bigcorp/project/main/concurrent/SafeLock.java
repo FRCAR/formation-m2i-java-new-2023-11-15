@@ -17,7 +17,7 @@ public class SafeLock {
 			return this.name;
 		}
 
-		public boolean salutEnCours(PersonnePolie autre) {
+		public boolean initialiseSalut(PersonnePolie autre) {
 			Boolean myLock = false;
 			Boolean yourLock = false;
 			try {
@@ -37,7 +37,7 @@ public class SafeLock {
 		}
 
 		public void saluer(PersonnePolie autre) {
-			if (salutEnCours(autre)) {
+			if (initialiseSalut(autre)) {
 				try {
 					System.out.format("%s: %s m'a salué !%n",
 							this.name, autre.getName());
