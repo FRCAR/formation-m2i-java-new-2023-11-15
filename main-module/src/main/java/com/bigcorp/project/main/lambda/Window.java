@@ -57,6 +57,9 @@ public class Window {
 			return s.length() > 3;
 		};
 		
+		
+		Predicate<String> estCeQueLaChaineEstVide = String::isEmpty;
+		
 		BiFunction<String, Double, String> maBiFonction = (s1, d1) -> {return s1 + d1;};
 
 	}

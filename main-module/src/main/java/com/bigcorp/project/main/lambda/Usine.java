@@ -19,6 +19,7 @@ public class Usine {
 		machine1.setMatiere(new Matiere("Verre", 2, 100));
 		
 		//La machine fait son traitement
+		machine1.travaille(m -> System.out.println(m));
 	}
 
 }
