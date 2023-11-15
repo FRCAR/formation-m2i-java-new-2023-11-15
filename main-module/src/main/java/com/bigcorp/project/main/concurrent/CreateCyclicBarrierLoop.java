@@ -24,9 +24,7 @@ public class CreateCyclicBarrierLoop {
 			Thread.sleep(1000);
 			new Thread(new Runner(startBarrier, stopBarrier)).start();
 			startBarrier.await();
-			startBarrier.reset();
 			stopBarrier.await();
-			stopBarrier.reset();
 		}
 	}
 
