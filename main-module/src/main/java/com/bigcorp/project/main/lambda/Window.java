@@ -10,6 +10,7 @@ public class Window {
 	public void onClick(int force) {
 		// choisit le bon Clickable qui est cliqué
 		String returnValue = clickable.click(force);
+		
 		System.out.println(returnValue);
 	}
 

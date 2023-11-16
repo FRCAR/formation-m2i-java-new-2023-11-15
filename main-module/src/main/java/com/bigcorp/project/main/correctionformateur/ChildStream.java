@@ -29,7 +29,7 @@ public class ChildStream {
 
 		//Afficher la moyenne d’âge des enfants.
 		System.out.println("\r\nMoyenne d'âge des enfants");
-		double ageMoyen = enfants.stream().mapToInt(c -> c.getAge()).average().orElse(0);
+		double ageMoyen = enfants.stream().mapToInt(c -> c.getAge()).average().getAsDouble();
 		System.out.println(ageMoyen);
 		
 		//Les deux lignes ci-dessous équivalent à :
@@ -40,17 +40,15 @@ public class ChildStream {
 		System.out.println("\r\nAu moins un enfant a dépassé : " + minAge + " ans");
 		boolean auMoinsUnEnfantADepasseLAge = enfants.stream().anyMatch(c -> c.getAge()> minAge);
 		System.out.println(auMoinsUnEnfantADepasseLAge);
-		
 
 		//Utiliser les streams pour afficher le nom de l’enfant ayant le plus grand âge.
 		System.out.println("\r\nEnfant ayant le plus grand age");
-		Child enfantLePlusVieux = enfants.stream().max((c1,c2) -> c1.getAge() - c2.getAge()).orElse(null);
+		Child enfantLePlusVieux = enfants.stream().max((c1,c2) -> c1.getAge() - c2.getAge()).get();
 		System.out.println(enfantLePlusVieux.getNom() + " a " + enfantLePlusVieux.getAge() + " ans");
-		
 		
 		//Pareil pour le plus petit age. 
 		System.out.println("\r\nEnfant ayant le plus petit age");
-		Child enfantLePlusJeune = enfants.stream().min((c1,c2) -> c1.getAge() - c2.getAge()).orElse(null);
+		Child enfantLePlusJeune = enfants.stream().min((c1,c2) -> c1.getAge() - c2.getAge()).get();
 		System.out.println(enfantLePlusJeune.getNom() + " a " + enfantLePlusJeune.getAge() + " ans");
 		
 	}
