@@ -38,7 +38,7 @@ public class LocalDateTp {
 							|| (t.getDayOfWeek() == DayOfWeek.FRIDAY && t.getDayOfMonth() != 13)
 							|| t.getDayOfWeek() == DayOfWeek.TUESDAY)
 			//Peek sert pour sortir des opérations de debug, sans modifier le stream
-			.peek(t -> System.out.println(t.getDayOfWeek().toString() + "-" + t))
+			//.peek(t -> System.out.println(t.getDayOfWeek().toString() + "-" + t))
 			.count();
 		
 		System.out.println("Le boulanger aura travaillé %1$s jours".formatted(nombreDeJoursDeTravail));
