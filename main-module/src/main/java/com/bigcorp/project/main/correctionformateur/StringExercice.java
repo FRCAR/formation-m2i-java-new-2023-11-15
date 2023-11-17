@@ -1,5 +1,7 @@
 package com.bigcorp.project.main.correctionformateur;
 
+import java.util.function.Predicate;
+
 public class StringExercice {
 	
 	public static void main(String[] args) {
@@ -13,6 +15,9 @@ public class StringExercice {
 		//sans caractère blanc au début (ou à la fin). 
 		//Affichez toutes les lignes 
 		superStringFois3.lines().map(String::strip).forEach(System.out::println);
+		
+		
+		superStringFois3.lines().filter(Predicate.not(String::isEmpty)).forEach(System.out::println);
 		
 	}
 	
